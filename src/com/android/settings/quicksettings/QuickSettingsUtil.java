@@ -329,8 +329,12 @@ public class QuickSettingsUtil {
             return "";
         } else {
             String s = tiles.get(0);
-            for (int i = 1; i < tiles.size(); i++) {
-                s += TILE_DELIMITER + tiles.get(i);
+            if ("".equals(s)) {
+                s = tiles.get(1);
+            } else {
+                for (int i = 1; i < tiles.size(); i++) {
+                    s += TILE_DELIMITER + tiles.get(i);
+                }
             }
             return s;
         }
